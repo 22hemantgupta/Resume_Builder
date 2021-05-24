@@ -74,9 +74,19 @@ WSGI_APPLICATION = 'resumebuilder.wsgi.application'
 # https://docs.djangoproject.com/en/3.1/ref/settings/#databases
 
 DATABASES = {
+    # 'default': {
+    #     'ENGINE': 'django.db.backends.sqlite3',
+    #     'NAME': BASE_DIR / 'db.sqlite3',
+    # }
+
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'ENGINE': 'djongo',
+        'NAME': 'user',
+         'CLIENT': {
+            'host': 'mongodb+srv://test:<password>@cluster0.vqvin.mongodb.net/myFirstDatabase?retryWrites=true&w=majority'
+        },  
+        'USER': '<db test >',
+        'PASSWORD': '<db 1234>',
     }
 }
 
